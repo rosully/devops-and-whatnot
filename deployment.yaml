@@ -1,0 +1,37 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: whatnot-deployment
+  labels:
+    app: whatnot
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: whatnot
+  template:
+    metadata:
+      labels:
+        app: whatnot
+    spec:
+      containers:
+        - name: whatnot
+          image: whatnot:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 5000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: whatnot-service
+spec:
+  ports:
+    - port: 5000
+      protocol: TCP
+      targetPort: 5000
+  selector:
+    app: whatnot
+  type: LoadBalancer
