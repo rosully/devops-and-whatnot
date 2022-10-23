@@ -10,7 +10,7 @@ spec:
   # replicas: 3
   # progressDeadlineSeconds: 60
   # strategy:
-  # start up 1 new pod and then shut down 1 old pod
+  # # start up 1 new pod and then shut down 1 old pod
   # type: RollingUpdate
   # rollingUpdate:
   #   maxUnavailable: 0
@@ -53,7 +53,6 @@ metadata:
   namespace: whatnot-api
 spec:
   ports:
-    # - port: 5000
     - name: http
       port: 80
       targetPort: 5000

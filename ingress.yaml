@@ -8,7 +8,9 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - http:
+    # upon instantiation add ingress IP and hostname "hello-world.info" to /etc/hosts as admin
+    - host: hello-world.info
+      http:
         paths:
           - path: /
             pathType: Prefix
@@ -16,4 +18,4 @@ spec:
               service:
                 name: whatnot-api-svc
                 port:
-                  number: 80
+                  number: 5000

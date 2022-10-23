@@ -22,10 +22,12 @@ minikube delete --profile minikube
 gitignore
 dockerignore
 
+minikube start --memory=4096 --driver=virtualbox
+
 ## Provisioning Infrastructure
 
 Terraform
-AWS - ECR, EKS
+AWS - ECR, EKS --> terraform EKS module (not AWS)
 
 ## CI/CD
 
