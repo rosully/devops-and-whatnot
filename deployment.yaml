@@ -25,11 +25,13 @@ spec:
     spec:
       containers:
         - name: whatnot-api
+          # PRODUCTION
+          # image: us-central1-docker.pkg.dev/whatnot-staging/whatnot-api/whatnot-api:latest
+          image: digitalocean/flask-helloworld:latest
+          imagePullPolicy: Always
+          # LOCAL
           # image: whatnot-api:latest
           # imagePullPolicy: Never
-          image: digitalocean/flask-helloworld:latest
-          # image: 720766170633.dkr.ecr.us-east-1.amazonaws.com/whatnot-api:latest
-          imagePullPolicy: Always
           ports:
             - containerPort: 5000
           readinessProbe:

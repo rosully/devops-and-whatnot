@@ -1,4 +1,4 @@
-# devops-and-whatnot
+# DevOps (and Whatnot)
 
 ## Local Development
 
