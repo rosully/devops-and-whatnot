@@ -17,7 +17,9 @@ Note: (Mac users) it may be necessary to turn off AirPlay for interference on po
 
 ```bash
 # install helm locally
-brew install helm
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+chmod 700 get_helm.sh
+./get_helm.sh
 
 # add the stable repo to the k8s cluster
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
@@ -33,11 +35,11 @@ helm install nginx-ingress-4-0-13 ingress-nginx/ingress-nginx \
      -f values.yaml
 ```
 
-### Deployment, Service, and Ingress Provisioning
+### K8s Commands
 
 ```bash
 kubectl create namespace whatnot-api
-kubectl apply -f deployment.yaml
+kubectl apply -f whatnot-api.yaml
 kubectl apply -f ingress.yaml
 ```
 
