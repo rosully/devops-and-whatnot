@@ -9,8 +9,8 @@ spec:
   ingressClassName: nginx
   rules:
     # upon instantiation add ingress IP and hostname "hello-world.info" to /etc/hosts as admin
-    - host: hello-world.info
-      http:
+    # - host: hello-world.info
+    - http:
         paths:
           - path: /
             pathType: Prefix

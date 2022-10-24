@@ -25,14 +25,13 @@ spec:
     spec:
       containers:
         - name: whatnot-api
-          image: whatnot-api:latest
+          # image: whatnot-api:latest
+          image: digitalocean/flask-helloworld:latest
           # image: 720766170633.dkr.ecr.us-east-1.amazonaws.com/whatnot-api:latest
-          imagePullPolicy: Never
-          # imagePullPolicy: Always
+          # imagePullPolicy: Never
+          imagePullPolicy: Always
           ports:
-            - name: http
-              containerPort: 5000
-              protocol: TCP
+            containerPort: 5000
           # readinessProbe:
           #   httpGet:
           #     path: /
@@ -51,10 +50,12 @@ kind: Service
 metadata:
   name: whatnot-api-svc
   namespace: whatnot-api
+  labels:
+    app: whatnot-api
 spec:
   ports:
-    - name: http
-      port: 80
+    - port: 80
       targetPort: 5000
+      protocol: TCP
   selector:
     app: whatnot-api
