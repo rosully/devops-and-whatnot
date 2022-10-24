@@ -31,7 +31,7 @@ spec:
           # imagePullPolicy: Never
           imagePullPolicy: Always
           ports:
-            containerPort: 5000
+            - containerPort: 5000
           # readinessProbe:
           #   httpGet:
           #     path: /
