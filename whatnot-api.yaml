@@ -32,7 +32,8 @@ spec:
           # image: whatnot-api:latest
           # imagePullPolicy: Never
           ports:
-            - containerPort: 5000
+            - name: http
+              containerPort: 5000
           readinessProbe:
             httpGet:
               path: /
@@ -55,7 +56,8 @@ metadata:
     app: whatnot-api
 spec:
   ports:
-    - port: 80
+    - name: http
+      port: 80
       targetPort: 5000
       protocol: TCP
   selector:
