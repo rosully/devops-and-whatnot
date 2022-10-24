@@ -5,6 +5,9 @@ FROM python:3-alpine
 
 WORKDIR /app
 COPY app.py ./
+# TODO - add dockerignore --> include app.py and requirements.txt
+# COPY . ./
+# RUN pip install --> will look for requirements.txt?
 RUN pip install flask
 
 EXPOSE 5000

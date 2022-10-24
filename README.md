@@ -27,7 +27,7 @@ minikube start --memory=4096 --driver=virtualbox
 ## Provisioning Infrastructure
 
 Terraform
-AWS - ECR, EKS --> terraform EKS module (not AWS)
+AWS - ECR + EKS --> terraform EKS module (not AWS)
 
 ## CI/CD
 
