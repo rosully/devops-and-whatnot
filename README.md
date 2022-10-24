@@ -1,5 +1,7 @@
 # devops-and-whatnot
 
+## Local Development
+
 docker build -t whatnot-api .
 docker run -p 5000:5000 whatnot-api
 

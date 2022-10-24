@@ -59,4 +59,3 @@ spec:
       protocol: TCP
   selector:
     app: whatnot-api
-  type: LoadBalancer
