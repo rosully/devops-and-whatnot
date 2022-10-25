@@ -44,13 +44,3 @@ kubectl apply -f ingress.yaml
 ```
 
 Upon instantiation, add Ingress IP and hostname "hello-world.info" to /etc/hosts as admin on your local device
-
-## Provisioning Infrastructure
-
-Terraform
-AWS - ECR + EKS --> terraform EKS module (not AWS)
-
-## CI/CD
-
-Infra --> Terraform + Atlantis + GitHub Actions + AWS
-App --> GitHub Actions + AWS
